@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border-style: none;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+html, body {
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", "sans-serif", Arial, sans-serif;
+    line-height: 1.4;
+    color: #1e3041;
+    background-image: linear-gradient(to bottom, #11956b, #1d9d77, #27a683, #31ae8f, #3bb79b, #3dbda2, #40c3a8, #42c9af, #3cceb2, #36d3b5, #2ed8b7, #25ddba);}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+#root {
+    height: 100%;
+}
+
+.App {
+    height: 100%;
+}
+
+section {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    padding-top: 100px;
+    flex-shrink: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.task-input, .add-btn {
+    height: 45px;
+    border-radius: 5px;
+    display: block;
+}
+
+.task-input {
+    padding: 0 14px;
+    width: 300px;
+}
+
+.add-btn {
+    width: 80px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: #1d1d35;
+    color: #fff;
+}
+
+.add-btn:hover {
+    background-color: rgb(29 29 53 / 90%);
+}
+
+.task-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: none;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px); 
+    grid-template-rows: repeat(3, 100px);
+    gap: 20px;
+    padding: 10px;
+}
+
+.task-container {
+    background-color: #fff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.task {
+    width: 100%;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.date {
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.actions {
+    padding-top: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions div:last-of-type {
+    display: flex;
+    gap: 5px;
+    align-items: end;
+}
+
+.edit, .delete {
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.edit:hover {
+    color: #008E83;
+}
+
+.delete:hover {
+    color: #b22222;
+}
+
+
+@media screen and (max-width: 945px) {
+    .task-list > div {
+        grid-template-columns: repeat(3, 250px); 
+        grid-template-rows: repeat(3, 100px);
+    }
+}
