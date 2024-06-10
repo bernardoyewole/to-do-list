@@ -1,6 +1,16 @@
-import Task from "./Task"
+import { useContext } from "react";
+import Task from "./Task";
+import { TaskContext } from "../App"
 
-function TaskList({ tasks, formatDate, deleteTask, editTask, completeTask }) {
+function TaskList() {
+    const {
+        tasks,
+        deleteTask,
+        editTask,
+        completeTask,
+        formatDate
+    } = useContext(TaskContext);
+
     const handleDeleteTask = (taskId) => {
         deleteTask(taskId);
     }

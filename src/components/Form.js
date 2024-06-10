@@ -1,6 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import { useContext } from "react";
+import { TaskContext } from "../App";
 
-function Form({ addTask, isEditing, currentTask, updateTask }) {
+function Form() {
+    const {
+        addTask,
+        updateTask,
+        isEditing,
+        currentTask,
+    } = useContext(TaskContext);
+
     const [userInput, setUserInput] = useState('');
 
     /*

@@ -3,8 +3,11 @@ import Form from './components/Form';
 import TaskList from './components/TaskList';
 import { v4 as uuid } from "uuid";
 import { useState, useEffect } from 'react';
+import { createContext } from 'react';
+export const TaskContext = createContext();
 
 function App() {
+
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem('tasks');
 
@@ -83,31 +86,45 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <section>
-        <h1>Task Tracker</h1>
-        <div className='form-container'>
-          <Form
-            className='form'
-            addTask={addTask}
-            isEditing={isEditing}
-            currentTask={currentTask}
-            updateTask={updateTask}
-          >
-          </Form>
-        </div>
-        <div className='task-list'>
-          <TaskList
-            tasks={tasks}
-            formatDate={formatDate}
-            deleteTask={deleteTask}
-            editTask={editTask}
-            completeTask={completeTask}
-          >
-          </TaskList>
-        </div>
-      </section>
-    </div>
+    <TaskContext.Provider value={
+      {
+        tasks,
+        addTask,
+        deleteTask,
+        editTask,
+        updateTask,
+        completeTask,
+        isEditing,
+        currentTask,
+        formatDate
+      }
+    }>
+      <div className="App">
+        <section>
+          <h1>Task Tracker</h1>
+          <div className='form-container'>
+            <Form
+              className='form'
+              addTask={addTask}
+              isEditing={isEditing}
+              currentTask={currentTask}
+              updateTask={updateTask}
+            >
+            </Form>
+          </div>
+          <div className='task-list'>
+            <TaskList
+              tasks={tasks}
+              formatDate={formatDate}
+              deleteTask={deleteTask}
+              editTask={editTask}
+              completeTask={completeTask}
+            >
+            </TaskList>
+          </div>
+        </section>
+      </div>
+    </TaskContext.Provider>
   );
 }
 

@@ -88,6 +88,7 @@ h1 {
     grid-template-columns: repeat(3, 300px); 
     grid-template-rows: repeat(3, 80px);
     gap: 15px;
+    padding-bottom: 20px;
 }
 
 .task-container {

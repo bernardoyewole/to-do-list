@@ -1,8 +1,16 @@
 import { AiOutlineDelete } from "react-icons/ai";
 import { MdOutlineModeEdit } from "react-icons/md";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { useContext } from "react";
+import { TaskContext } from "../App";
 
-function Task({ id, name, date, isCompleted, deleteTask, editTask, completeTask }) {
+function Task({ id, name, date, isCompleted }) {
+    const {
+        deleteTask,
+        editTask,
+        completeTask,
+    } = useContext(TaskContext)
+
     const handleDelete = () => {
         deleteTask(id);
     }
