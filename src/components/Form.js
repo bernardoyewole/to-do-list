@@ -2,6 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 
 function Form({ addTask, isEditing, currentTask, updateTask }) {
     const [userInput, setUserInput] = useState('');
+
+    /*
+        The useRef hook is a built-in React hook that allows you to create a 
+        mutable object which persists across renders. This object can be used 
+        to store a reference to a DOM element or any other mutable value that 
+        you want to persist between renders without causing re-renders.
+    */
     const inputRef = useRef(null);
 
     const handleInput = (event) => {

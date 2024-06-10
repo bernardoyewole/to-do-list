@@ -70,6 +70,7 @@ function App() {
   return (
     <div className="App">
       <section>
+        <h1>Task Tracker</h1>
         <div className='form-container'>
           <Form
             className='form'

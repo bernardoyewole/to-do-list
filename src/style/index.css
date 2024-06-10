@@ -37,13 +37,19 @@ section {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     align-items: center;
     justify-content: center;
+    padding-top: 100px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 .form-container {
-    padding-top: 100px;
     flex-shrink: 0;
     display: flex;
     gap: 20px;
@@ -53,6 +59,7 @@ section {
     height: 45px;
     border-radius: 5px;
     display: block;
+    font-weight: 500;
 }
 
 .task-input {
@@ -61,7 +68,7 @@ section {
 }
 
 .add-btn {
-    width: 80px;
+    width: 90px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     background-color: #1d1d35;
@@ -76,17 +83,16 @@ section {
     flex-grow: 1;
     overflow-y: auto;
     scrollbar-width: none;
-    margin-top: 10px;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(3, 300px); 
-    grid-template-rows: repeat(3, 100px);
-    gap: 20px;
-    padding: 10px;
+    grid-template-rows: repeat(3, 80px);
+    gap: 15px;
 }
 
 .task-container {
     background-color: #fff;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -100,12 +106,13 @@ section {
 
 .name {
     font-weight: 600;
-    font-size: 18px;
 }
 
 .date {
-    font-size: 14px;
-    padding-top: 5px;
+    font-size: 13px;
+    padding-top: 3px;
+    color: #858484;
+    font-weight: 500;
 }
 
 .actions {
