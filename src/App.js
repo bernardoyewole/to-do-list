@@ -22,6 +22,7 @@ function App() {
     let task = {
       id: uuid().slice(0, 8),
       name: userInput,
+      isCompleted: false,
       date: Date.now()
     }
     setTasks([...tasks, task]);
@@ -67,6 +68,20 @@ function App() {
     setCurrentTask({});
   }
 
+  const completeTask = (taskId) => {
+    const updatedTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted
+        };
+      }
+      return task;
+    });
+
+    setTasks(updatedTasks);
+  }
+
   return (
     <div className="App">
       <section>
@@ -87,6 +102,7 @@ function App() {
             formatDate={formatDate}
             deleteTask={deleteTask}
             editTask={editTask}
+            completeTask={completeTask}
           >
           </TaskList>
         </div>

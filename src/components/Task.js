@@ -1,6 +1,8 @@
-import { MdDelete, MdEdit } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
+import { MdOutlineModeEdit } from "react-icons/md";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
-function Task({ id, name, date, deleteTask, editTask }) {
+function Task({ id, name, date, isCompleted, deleteTask, editTask, completeTask }) {
     const handleDelete = () => {
         deleteTask(id);
     }
@@ -9,19 +11,24 @@ function Task({ id, name, date, deleteTask, editTask }) {
         editTask(id);
     }
 
+    const handleComplete = () => {
+        completeTask(id);
+    }
+
     return (
         <div className="task-container">
             <div className="task">
                 <div>
-                    <p className="name">{name}</p>
+                    <p className={`name ${isCompleted ? 'completed' : 'incomplete'}`}>{name}</p>
                 </div>
                 <div className="actions">
                     <div>
                         <p className="date">{date}</p>
                     </div>
                     <div>
-                        <MdEdit className="edit" onClick={handleEdit} />
-                        <MdDelete className="delete" onClick={handleDelete} />
+                        <IoIosCheckmarkCircleOutline className="complete" onClick={handleComplete} />
+                        <MdOutlineModeEdit className="edit" onClick={handleEdit} />
+                        <AiOutlineDelete className="delete" onClick={handleDelete} />
                     </div>
                 </div>
             </div>

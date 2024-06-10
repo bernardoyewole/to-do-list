@@ -1,6 +1,6 @@
 import Task from "./Task"
 
-function TaskList({ tasks, formatDate, deleteTask, editTask }) {
+function TaskList({ tasks, formatDate, deleteTask, editTask, completeTask }) {
     const handleDeleteTask = (taskId) => {
         deleteTask(taskId);
     }
@@ -35,8 +35,10 @@ function TaskList({ tasks, formatDate, deleteTask, editTask }) {
                     id={task.id}
                     name={truncateTaskName(task.name, 24)}
                     date={formatDate(task.date)}
+                    isCompleted={task.isCompleted}
                     deleteTask={handleDeleteTask}
                     editTask={handleEditTask}
+                    completeTask={completeTask}
                 ></Task>
             ))}
         </>

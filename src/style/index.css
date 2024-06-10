@@ -111,8 +111,13 @@ h1 {
 .date {
     font-size: 13px;
     padding-top: 3px;
-    color: #858484;
+    color: #717171;
     font-weight: 500;
+}
+
+.completed {
+    text-decoration: line-through;
+    text-decoration-thickness: 1.3px;
 }
 
 .actions {
@@ -127,20 +132,25 @@ h1 {
     align-items: end;
 }
 
-.edit, .delete {
-    font-size: 20px;
+.complete, .edit, .delete {
+    font-size: 17px;
     cursor: pointer;
+    color: #717171;
+    font-weight: 600;
     transition: all 0.25s ease-in-out;
 }
 
-.edit:hover {
+.complete:hover {
     color: #008E83;
+}
+
+.edit:hover {
+    color: #1e3041;
 }
 
 .delete:hover {
     color: #b22222;
 }
-
 
 @media screen and (max-width: 945px) {
     .task-list > div {
