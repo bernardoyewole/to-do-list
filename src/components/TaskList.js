@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Task from "./Task";
 import { TaskContext } from "../App"
+import { formatDate } from "../App";
 
 function TaskList() {
     const {
@@ -8,7 +9,6 @@ function TaskList() {
         deleteTask,
         editTask,
         completeTask,
-        formatDate
     } = useContext(TaskContext);
 
     const handleDeleteTask = (taskId) => {
